@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #ecb08f(255, 188, 179, 0.788);
+        }
+
+        .grid-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 2px solid #f7c6a3;
+            background-color: #ffd4b3;
+            display: grid;
+            grid-template-columns: minmax(200px, 1fr) minmax(400px, 2fr);
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas: 
+                "header header"
+                "sidebar main"
+                "footer footer";
+
+            gap: 2px;
+            padding: 2px;
+        }  
+
+        .grid-item {
+            padding: 20px;
+            border: 1px solid  black;
+            background-color:#f8b47f;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .header {
+            grid-area: header;
+            background-color:  #f8b47f;;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #ffb07c;;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #ffc499;
+            min-height: 200px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #f8b47f;
+        }
+
+        @media(max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto;
+                grid-template-areas: 
+                    "header"
+                    "sidebar"
+                    "main"
+                    "footer";
+                    gap: 0px;
+                    padding: 0px 15px;
+            }
+
+            html, body {
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="grid-container">
+       <header class="grid-item header">Cabeçalho</header>
+       <aside class="grid-item sidebar">Barra lateral</aside>
+       <main class="grid-item">Conteúdo princpal</main>
+       <footer class="grid-item footer">Rodapé</footer>
+    </div>
+</body>
+</html>
