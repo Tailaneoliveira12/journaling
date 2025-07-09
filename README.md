@@ -1,1 +1,1 @@
-#Journaling
+Journaling
